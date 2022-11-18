@@ -27,5 +27,7 @@ Route::group([
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('user-profile', 'AuthController@me');
-    Route::get('mahasiswa','MahasiswaController@index');
+    Route::get('mahasiswa','MahasiswaController');
+    Route::get('fakultas','FakultasController');
+    Route::get('prodi','ProdiController');
 });

@@ -7,7 +7,7 @@ use App\Models\Mahasiswa;
 class MahasiswaController extends Controller
 {
     public function __construct(){
-        //$this->middleware('auth:api');
+        $this->middleware('auth:api');
     }
     
     /**

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class FakultasController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth:api');
+    }
     /**
      * Handle the incoming request.
      *

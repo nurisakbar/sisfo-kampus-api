@@ -7,7 +7,7 @@ use App\Models\Mahasiswa;
 class MahasiswaController extends Controller
 {
     public function __construct(){
-        //$this->middleware('auth:api');
+        $this->middleware('auth:api');
     }
     
     /**
@@ -33,11 +33,11 @@ class MahasiswaController extends Controller
         ->join('fakultas','fakultas.FakultasID','prodi.FakultasID');
 
         if($request->has('nama')){
-            $mahasiswa->where('Nama','like',"%".$request->nama."%");
+            $mahasiswa->where('mhsw.Nama','like',"%".$request->nama."%");
         }
 
         if($request->has('nim')){
-            $mahasiswa->where('MhswID','like',"%".$request->nim."%");
+            $mahasiswa->where('mhsw.MhswID','like',"%".$request->nim."%");
         }
 
         $response['message'] = "Data Mahasiswa";

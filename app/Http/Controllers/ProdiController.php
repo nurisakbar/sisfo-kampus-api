@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ProdiController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth:api');
+    }
+    
     /**
      * Handle the incoming request.
      *

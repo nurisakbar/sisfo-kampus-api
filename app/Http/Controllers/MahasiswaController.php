@@ -41,7 +41,7 @@ class MahasiswaController extends Controller
         }
 
         if($request->has('angkatan')){
-            $mahasiswa->where('TahunID',$request->angkatan);
+            $mahasiswa->whereRaw("left(TahunID,4)='".$request->angkatan."'");
         }
 
         $response['message'] = "Data Mahasiswa";

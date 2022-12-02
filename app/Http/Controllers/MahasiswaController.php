@@ -40,6 +40,10 @@ class MahasiswaController extends Controller
             $mahasiswa->where('mhsw.MhswID','like',"%".$request->nim."%");
         }
 
+        if($request->has('angkatan')){
+            $mahasiswa->where('TahunID',$request->angkatan);
+        }
+
         $response['message'] = "Data Mahasiswa";
         $response['success'] = true;
         $response['data']    = $mahasiswa->limit($perPage)->get();
